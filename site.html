@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curriculum Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+            width: 350px;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 15px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            background-color: #fafafa;
+            min-height: 50px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Curriculum Generator</h2>
+    <input type="text" id="topicInput" placeholder="Enter a topic...">
+    <button onclick="generateCurriculum()">Generate Curriculum</button>
+    <div class="result" id="resultArea">
+        Your generated curriculum will appear here...
+    </div>
+</div>
+
+<script>
+    function generateCurriculum() {
+        const topic = document.getElementById('topicInput').value;
+        const resultArea = document.getElementById('resultArea');
+
+        if (topic.trim() === "") {
+            resultArea.innerHTML = "Please enter a topic first.";
+            return;
+        }
+
+        // Placeholder for generated curriculum
+        resultArea.innerHTML = `<strong>Curriculum for ${topic}:</strong><br>
+        1. Introduction to ${topic}<br>
+        2. Key Concepts in ${topic}<br>
+        3. Practical Applications<br>
+        4. Advanced Topics<br>
+        5. Final Project`;
+    }
+</script>
+
+</body>
+</html>
